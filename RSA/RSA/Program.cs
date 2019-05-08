@@ -174,7 +174,14 @@ namespace RSA
 
             for (int i = 0; i < plainText.Length; i+=2)
             {
-                Console.Write($"{((char)(Convert.ToInt32(plainText.Substring(i, 2))+97)).ToString().ToUpper()}");
+                if (i+2 > plainText.Length-1)
+                {
+                    Console.Write($"{((char)(Convert.ToInt32(plainText.Substring(i, 1)) + 97)).ToString().ToUpper()}");
+                }
+                else
+                {
+                    Console.Write($"{((char)(Convert.ToInt32(plainText.Substring(i, 2)) + 97)).ToString().ToUpper()}");
+                }
             }
 
             Console.WriteLine("\n");
